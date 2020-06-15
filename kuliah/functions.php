@@ -22,3 +22,18 @@ function query($query)
   }
   return $rows;
 }
+
+function tambah($data)
+{
+  $conn = koneksi();
+
+  $id_member = htmlspecialchars($data['id_member']);
+  $nama = htmlspecialchars($data['nama']);
+  $alamat = htmlspecialchars($data['alamat']);
+  $no_telp = htmlspecialchars($data['no_telp']);
+
+  $query = "INSERT INTO member VALUES ('$id_member','$nama','$alamat','$no_telp')";
+  mysqli_query($conn, $query);
+  echo mysqli_error($conn);
+  return mysqli_affected_rows($conn);
+}

@@ -15,6 +15,10 @@ $member = query("SELECT * FROM member");
 
 <body>
   <h3>Daftar Member</h3>
+
+  <a href="tambah.php">Tambah Data Member</a>
+  <br><br>
+
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
       <th>#</th>
