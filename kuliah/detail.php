@@ -3,9 +3,10 @@ require 'functions.php';
 
 //ambil id dari url
 $id = $_GET['id'];
+
 //query member berdasarkan id
-$member = query("SELECT * FROM member WHERE id_member = $id");
-var_dump($member);
+$m = query("SELECT * FROM member WHERE id_member = '$id'");
+
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +21,12 @@ var_dump($member);
 <body>
   <h3>Detail Member</h3>
   <ul>
-    <li>ID Member : </li>
-    <li>Nama : </li>
-    <li>Alamat : </li>
-    <li>No Telp : </li>
+    <li>ID Member : <?= $m['id_member']; ?></li>
+    <li>Nama : <?= $m['nama']; ?></li>
+    <li>Alamat : <?= $m['alamat']; ?></li>
+    <li>No Telp : <?= $m['no_telp']; ?></li>
+    <li><a href="">Ubah</a> | <a href="">Hapus</a></li>
+    <li><a href="latihan3.php">Kembali ke daftar member</a></li>
   </ul>
 </body>
 
